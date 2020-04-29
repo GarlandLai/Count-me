@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from "./Components/Header";
 import Navigation from "./Components/Navigation";
-import Characters from "./Components/Characters/Characters";
+import Display from "./Components/Display/Display";
 import styled from "styled-components";
 
 const AppContainer = styled.section`
@@ -15,7 +15,7 @@ const App = () => {
       <Header />
       <AppContainer>
         <Navigation />
-        <Characters />
+        <Display />
       </AppContainer>
     </div>
   );

@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-const CharacterContainer = styled.div`
+const DislayContainer = styled.div`
   margin: 50px;
   background-color: grey;
   width: 100vw;
   height: 400px;
 `;
 
-const Characters = () => {
+const Display = () => {
   return (
-    <CharacterContainer>
-      <p>Characters</p>
-    </CharacterContainer>
+    <DislayContainer>
+      <p>Display</p>
+    </DislayContainer>
   )
 }
 
