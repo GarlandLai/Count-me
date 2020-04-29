@@ -8,12 +8,17 @@ const DislayContainer = styled.div`
   height: 400px;
 `;
 
-const Display = () => {
+const Display = props => {
+  console.log(props)
   return (
     <DislayContainer>
-      <p>Display</p>
+        <label>Letter Count:
+          <textarea onChange={props.change} value={props.userInput} />
+        </label>
+        <input type="button" value="Clear" onClick={props.clicked}/>
+        <p>Count = {props.userInput}</p>
     </DislayContainer>
   )
 }
 
-export default Characters;
+export default Display;
