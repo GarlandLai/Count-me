@@ -13,21 +13,32 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ""
+      input: "",
+      sortBy: "home"
     }
     this.handleClear = this.handleClear.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.handleSortSelection = this.handleSortSelection.bind(this)
+  }
+
+  handleSortSelection = (selection) => {
+    this.setState({
+      input: "",
+      sortBy: selection,
+    })
   }
 
   handleClear = () => {
     this.setState({
-      input: ""
+      input: "",
+      sortBy: this.state.sortBy
     })
   };
 
   handleChange = (event) => {
     this.setState({
-      input: event.target.value
+      input: event.target.value,
+      sortBy: this.state.sortBy
     })
   }
 
@@ -36,8 +47,8 @@ class App extends Component {
     <div className="App">
       <Header />
       <AppContainer>
-        <Navigation />
-        <Display userInput={this.state.input} change={this.handleChange} clicked={this.handleClear}/>
+        <Navigation onSelect={this.handleSortSelection} sortBy={this.state.sortBy}/>
+        <Display userInput={this.state.input} change={this.handleChange} clicked={this.handleClear} count={this.state.count} />
       </AppContainer>
     </div>
   );

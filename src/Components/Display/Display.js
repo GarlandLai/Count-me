@@ -9,14 +9,18 @@ const DislayContainer = styled.div`
 `;
 
 const Display = props => {
-  console.log(props)
+  // console.log(props)
+  
+  const inputCounter = () => {
+    return props.userInput.split("").length;
+  }
   return (
     <DislayContainer>
         <label>Letter Count:
           <textarea onChange={props.change} value={props.userInput} />
         </label>
         <input type="button" value="Clear" onClick={props.clicked}/>
-        <p>Count = {props.userInput}</p>
+        <p>Count = {inputCounter()}</p>
     </DislayContainer>
   )
 }
