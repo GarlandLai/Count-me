@@ -15,7 +15,13 @@ const TextArea = styled.textarea`
 
 const Display = props => {
   const inputCounter = () => {
+    if (props.countBy === "Character") {
     return props.userInput.split("").length;
+    }
+    if (props.countBy === "Words") {
+      return props.userInput.split(" ").length;
+      }
+    return props.userInput.split(" ").length;
   }
   return (
     <DislayContainer>
