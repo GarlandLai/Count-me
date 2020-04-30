@@ -8,19 +8,31 @@ const DislayContainer = styled.div`
   height: 400px;
 `;
 
+const TextArea = styled.textarea`
+  width: 60%;
+  height: 200px;
+`;
+
 const Display = props => {
-  // console.log(props)
-  
   const inputCounter = () => {
     return props.userInput.split("").length;
   }
   return (
     <DislayContainer>
-        <label>Letter Count:
-          <textarea onChange={props.change} value={props.userInput} />
-        </label>
+      {props.countBy === "home" ? (
+      <div>
+      <h1>Please choose selection</h1>
+      </div>) :
+        (
+        <div>
+        <label>{props.countBy} Count: </label>
+        <br />
+        <TextArea onChange={props.change} value={props.userInput} />
+        <br />
         <input type="button" value="Clear" onClick={props.clicked}/>
         <p>Count = {inputCounter()}</p>
+        </div>
+        )}
     </DislayContainer>
   )
 }

@@ -14,31 +14,31 @@ class App extends Component {
     super(props);
     this.state = {
       input: "",
-      sortBy: "home"
+      countBy: "home"
     }
     this.handleClear = this.handleClear.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    this.handleSortSelection = this.handleSortSelection.bind(this)
+    this.handlecountSelection = this.handlecountSelection.bind(this)
   }
 
-  handleSortSelection = (selection) => {
+  handlecountSelection = (selection) => {
     this.setState({
       input: "",
-      sortBy: selection,
+      countBy: selection,
     })
   }
 
   handleClear = () => {
     this.setState({
       input: "",
-      sortBy: this.state.sortBy
+      countBy: this.state.countBy
     })
   };
 
   handleChange = (event) => {
     this.setState({
       input: event.target.value,
-      sortBy: this.state.sortBy
+      countBy: this.state.countBy
     })
   }
 
@@ -47,8 +47,8 @@ class App extends Component {
     <div className="App">
       <Header />
       <AppContainer>
-        <Navigation onSelect={this.handleSortSelection} sortBy={this.state.sortBy}/>
-        <Display userInput={this.state.input} change={this.handleChange} clicked={this.handleClear} count={this.state.count} />
+        <Navigation onSelect={this.handlecountSelection} countBy={this.state.countBy}/>
+        <Display userInput={this.state.input} change={this.handleChange} clicked={this.handleClear} count={this.state.count} countBy={this.state.countBy}/>
       </AppContainer>
     </div>
   );

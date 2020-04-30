@@ -21,9 +21,9 @@ const Navigation = (props) => {
   return (
     <NavContainer>
       <StyledTab id="home" onClick={() => props.onSelect("home")}>Home</StyledTab>
-      <StyledTab id="characters" onClick={() => props.onSelect("char")}>Characters</StyledTab>
-      <StyledTab id="words" onClick={() => props.onSelect("words")}>Words</StyledTab>
-      <StyledTab id="dates" onClick={() => props.onSelect("dates")}>Dates</StyledTab>
+      <StyledTab id="characters" onClick={() => props.onSelect("Character")}>Characters</StyledTab>
+      <StyledTab id="words" onClick={() => props.onSelect("Words")}>Words</StyledTab>
+      <StyledTab id="dates" onClick={() => props.onSelect("Dates")}>Dates</StyledTab>
     </NavContainer>
   )
 }
