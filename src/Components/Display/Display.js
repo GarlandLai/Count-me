@@ -18,10 +18,16 @@ const Display = props => {
     if (props.countBy === "Character") {
     return props.userInput.split("").length;
     }
+    // Need better way to count words
     if (props.countBy === "Words") {
-      return props.userInput.split(" ").length;
-      }
-    return props.userInput.split(" ").length;
+      const splitInput = props.userInput.split(" ");
+      let newArray = [];
+      splitInput.map(input => {
+        if (input !== "") return newArray.push(input);
+      })
+      return newArray.length;
+    }
+    return "DATE INFO";
   }
   return (
     <DislayContainer>
