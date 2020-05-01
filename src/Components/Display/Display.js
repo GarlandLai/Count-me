@@ -18,7 +18,6 @@ const Display = props => {
     if (props.countBy === "Character") {
     return props.userInput.split("").length;
     }
-    // Need better way to count words
     if (props.countBy === "Words") {
       const splitInput = props.userInput.split(" ");
       let newArray = [];
