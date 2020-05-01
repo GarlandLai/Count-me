@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 
@@ -16,6 +17,10 @@ const TextArea = styled.textarea`
 `;
 
 const Display = props => {
+  const [startDate, setStart] = useState(null);
+  const [endDate, setEnd] = useState(null);
+  const [focusedInput, setFocus] = useState(null);
+
   const inputCounter = () => {
     if (props.countBy === "Character") {
     return props.userInput.split("").length;
@@ -30,10 +35,6 @@ const Display = props => {
     }
   }
 
-  const displayedContent = () => {
-
-  }
-
   return (
     <DislayContainer>
       {props.countBy === "home" ? (
@@ -45,16 +46,16 @@ const Display = props => {
         <label>{props.countBy} Count: </label>
         <br />
         {props.countBy === "Dates" ?
-          <DateRangePicker
-          startDate={props.startDate} // momentPropTypes.momentObj or null,
-          startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
-          endDate={props.endDate} // momentPropTypes.momentObj or null,
-          endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-          onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
-          focusedInput={props.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-          onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
-        /> :
-        <TextArea onChange={props.change} value={props.userInput} />}
+        <DateRangePicker
+        startDate={startDate} // momentPropTypes.momentObj or null,
+        startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
+        endDate={endDate} // momentPropTypes.momentObj or null,
+        endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
+        onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
+        focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+        onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+      /> :
+      <TextArea onChange={props.change} value={props.userInput} />}
         <br />
         <input type="button" value="Clear" onClick={props.clicked}/>
         <p>Count = {inputCounter()}</p>
