@@ -28,8 +28,12 @@ const Display = props => {
       })
       return newArray.length;
     }
-    return "DATE INFO";
   }
+
+  const displayedContent = () => {
+
+  }
+
   return (
     <DislayContainer>
       {props.countBy === "home" ? (
@@ -40,13 +44,8 @@ const Display = props => {
         <div>
         <label>{props.countBy} Count: </label>
         <br />
-        <TextArea onChange={props.change} value={props.userInput} />
-        <br />
-        <input type="button" value="Clear" onClick={props.clicked}/>
-        <p>Count = {inputCounter()}</p>
-        </div>
-        )}
-        <DateRangePicker
+        {props.countBy === "Dates" ?
+          <DateRangePicker
           startDate={props.startDate} // momentPropTypes.momentObj or null,
           startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
           endDate={props.endDate} // momentPropTypes.momentObj or null,
@@ -54,7 +53,14 @@ const Display = props => {
           onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
           focusedInput={props.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
           onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
-        />
+        /> :
+        <TextArea onChange={props.change} value={props.userInput} />}
+        <br />
+        <input type="button" value="Clear" onClick={props.clicked}/>
+        <p>Count = {inputCounter()}</p>
+        </div>
+        )}
+      
     </DislayContainer>
   )
 }
