@@ -17,6 +17,15 @@ const TextArea = styled.textarea`
   height: 200px;
 `;
 
+const tableOfContent = (
+  <div>
+  <h1>Please choose selection</h1>
+  <p>Characters: Count by all characters</p>
+  <p>Words: Count by words</p>
+  <p>Dates: Find days between two specified dates</p>
+  </div>
+);
+
 class Display extends Component {
   constructor(props) {
     super(props);
@@ -54,7 +63,7 @@ class Display extends Component {
     <DislayContainer>
       {this.props.countBy === "home" ? (
       <div>
-      <h1>Please choose selection</h1>
+      {tableOfContent}
       </div>) :
         (
         <div>
