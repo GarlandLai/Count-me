@@ -3,6 +3,7 @@ import styled from "styled-components";
 import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
+import moment from "moment";
 
 const DislayContainer = styled.div`
   margin: 50px;
@@ -38,6 +39,14 @@ class Display extends Component {
         if (input !== "") return newArray.push(input);
       })
       return newArray.length;
+    }
+    if (this.props.countBy === "Dates") {
+      const start = this.state.startDate;
+      const end = this.state.endDate;
+      const isValid = end && start !== null;
+      console.log(isValid)
+      if (isValid === true) return moment.duration(end.diff(start)).asDays();
+      return "0";
     }
   }
   render () {
