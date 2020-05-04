@@ -53,7 +53,6 @@ class Display extends Component {
       const start = this.state.startDate;
       const end = this.state.endDate;
       const isValid = end && start !== null;
-      console.log(isValid)
       if (isValid === true) return moment.duration(end.diff(start)).asDays();
       return "0";
     }
@@ -71,13 +70,16 @@ class Display extends Component {
         <br />
         {this.props.countBy === "Dates" ?
       <DateRangePicker
-          startDate={this.state.startDate} // momentPropTypes.momentObj or null,
-          startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
-          endDate={this.state.endDate} // momentPropTypes.momentObj or null,
-          endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-          onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
-          focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-          onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+          startDate={this.state.startDate} 
+          startDateId="start_date_id" 
+          endDate={this.state.endDate} 
+          endDateId="end_date_id"
+          onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
+          focusedInput={this.state.focusedInput}
+          onFocusChange={focusedInput => this.setState({ focusedInput })}
+          readOnly={true}
+          isOutsideRange={() => false}
+          showClearDates={true}
         /> :
       <TextArea onChange={this.props.change} value={this.props.userInput} />}
         <br />
