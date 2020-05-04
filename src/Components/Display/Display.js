@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
@@ -16,17 +16,23 @@ const TextArea = styled.textarea`
   height: 200px;
 `;
 
-const Display = props => {
-  const [startDate, setStart] = useState(null);
-  const [endDate, setEnd] = useState(null);
-  const [focusedInput, setFocus] = useState(null);
-
-  const inputCounter = () => {
-    if (props.countBy === "Character") {
-    return props.userInput.split("").length;
+class Display extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      startDate: null,
+      endDate: null,
+      focusedInput: null,
     }
-    if (props.countBy === "Words") {
-      const splitInput = props.userInput.split(" ");
+    this.inputCounter = this.inputCounter.bind(this)
+  }
+
+  inputCounter = () => {
+    if (this.props.countBy === "Character") {
+    return this.props.userInput.split("").length;
+    }
+    if (this.props.countBy === "Words") {
+      const splitInput = this.props.userInput.split(" ");
       let newArray = [];
       splitInput.map(input => {
         if (input !== "") return newArray.push(input);
@@ -34,36 +40,37 @@ const Display = props => {
       return newArray.length;
     }
   }
-
+  render () {
   return (
     <DislayContainer>
-      {props.countBy === "home" ? (
+      {this.props.countBy === "home" ? (
       <div>
       <h1>Please choose selection</h1>
       </div>) :
         (
         <div>
-        <label>{props.countBy} Count: </label>
+        <label>{this.props.countBy} Count: </label>
         <br />
-        {props.countBy === "Dates" ?
-        <DateRangePicker
-        startDate={startDate} // momentPropTypes.momentObj or null,
-        startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
-        endDate={endDate} // momentPropTypes.momentObj or null,
-        endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-        onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
-        focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-        onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
-      /> :
-      <TextArea onChange={props.change} value={props.userInput} />}
+        {this.props.countBy === "Dates" ?
+      <DateRangePicker
+          startDate={this.state.startDate} // momentPropTypes.momentObj or null,
+          startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
+          endDate={this.state.endDate} // momentPropTypes.momentObj or null,
+          endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
+          onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
+          focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+          onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+        /> :
+      <TextArea onChange={this.props.change} value={this.props.userInput} />}
         <br />
-        <input type="button" value="Clear" onClick={props.clicked}/>
-        <p>Count = {inputCounter()}</p>
+        <input type="button" value="Clear" onClick={this.props.clicked}/>
+        <p>Count = {this.inputCounter()}</p>
         </div>
         )}
       
     </DislayContainer>
   )
+}
 }
 
 export default Display;

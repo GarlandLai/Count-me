@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'react-dates/initialize';
-// import { DateRangePicker } from 'react-dates';
-// import 'react-dates/lib/css/_datepicker.css';
 import './App.css';
 import Header from "./Components/Header";
 import Navigation from "./Components/Navigation";
@@ -19,9 +16,6 @@ class App extends Component {
     this.state = {
       input: "",
       countBy: "home",
-      startDate: null,
-      endDate: null,
-      focusedInput: null,
     }
     this.handleClear = this.handleClear.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -55,8 +49,7 @@ class App extends Component {
       <Header />
       <AppContainer>
         <Navigation onSelect={this.handlecountSelection} countBy={this.state.countBy}/>
-        <Display userInput={this.state.input} change={this.handleChange} clicked={this.handleClear} count={this.state.count} countBy={this.state.countBy} 
-        />
+        <Display userInput={this.state.input} change={this.handleChange} clicked={this.handleClear} count={this.state.count} countBy={this.state.countBy} />
       </AppContainer>
     </div>
   );
