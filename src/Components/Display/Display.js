@@ -59,7 +59,7 @@ class Display extends Component {
       if (isValid === true) return moment.duration(end.diff(start)).asDays();
       return "0";
     }
-    return "Time";
+    return "0";
   }
 
   handleCountBySeletion = () => {
@@ -80,9 +80,16 @@ class Display extends Component {
       />
     )
   }
-    if (this.props.countBy === ("Characters" || "Words")) return <TextArea onChange={this.props.change} value={this.props.userInput} />;
+    if (this.props.countBy === "Character" || this.props.countBy === "Words") {
+      return (
+        <div>
+          <TextArea onChange={this.props.change} value={this.props.userInput}/>
+          <br />
+          <input type="button" value="Clear" onClick={this.props.clicked}/>
+        </div>
+      )
+    }
     if (this.props.countBy === "Time" ) return <Time />;
- 
   }
 
   render () {
@@ -90,34 +97,8 @@ class Display extends Component {
   return (
     <DislayContainer>
       {this.handleCountBySeletion()}
-      {/* {this.props.countBy === "home" ? (
-      <div>
-      {tableOfContent}
-      </div>) :
-        (
-        <div>
-        <label>{this.props.countBy} Count: </label>
-        <br />
-        {this.props.countBy === "Dates" ?
-      <DateRangePicker
-          startDate={this.state.startDate} 
-          startDateId="start_date_id" 
-          endDate={this.state.endDate} 
-          endDateId="end_date_id"
-          onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
-          focusedInput={this.state.focusedInput}
-          onFocusChange={focusedInput => this.setState({ focusedInput })}
-          readOnly={true}
-          isOutsideRange={() => false}
-          showClearDates={true}
-        /> :
-      <TextArea onChange={this.props.change} value={this.props.userInput} />} */}
-        {/* <br />
-        <input type="button" value="Clear" onClick={this.props.clicked}/>
-        <p>Count = {this.inputCounter()}</p>
-        </div>
-        )} */}
-      
+      {this.props.countBy === "home" ? null :
+      <p>Count = {this.inputCounter()}</p>}
     </DislayContainer>
   )
 }
