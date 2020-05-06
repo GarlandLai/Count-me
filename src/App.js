@@ -24,14 +24,12 @@ class App extends Component {
 
   handlecountSelection = (selection) => {
     this.setState({
-      input: "",
       countBy: selection,
     })
   }
 
   handleClear = () => {
     this.setState({
-      input: "",
       countBy: this.state.countBy
     })
   };
@@ -39,7 +37,6 @@ class App extends Component {
   handleChange = (event) => {
     this.setState({
       input: event.target.value,
-      countBy: this.state.countBy
     })
   }
 

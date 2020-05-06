@@ -35,6 +35,7 @@ class Display extends Component {
       startDate: null,
       endDate: null,
       focusedInput: null,
+      finalTime: null
     }
     this.inputCounter = this.inputCounter.bind(this)
     this.handleCountBySeletion = this.handleCountBySeletion.bind(this)
@@ -60,6 +61,10 @@ class Display extends Component {
       return "0";
     }
     return "0";
+  }
+
+  handleTimeSubmission = (finalCount) => {
+    this.setState({finalTime: finalCount})
   }
 
   handleCountBySeletion = () => {
@@ -89,7 +94,7 @@ class Display extends Component {
         </div>
       )
     }
-    if (this.props.countBy === "Time" ) return <Time />;
+    if (this.props.countBy === "Time" ) return <Time onTimeSubmission={this.state.handleTimeSubmission} />;
   }
 
   render () {
