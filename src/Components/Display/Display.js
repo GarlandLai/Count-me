@@ -35,10 +35,11 @@ class Display extends Component {
       startDate: null,
       endDate: null,
       focusedInput: null,
-      finalTime: null
+      finalTime: 0
     }
     this.inputCounter = this.inputCounter.bind(this)
     this.handleCountBySeletion = this.handleCountBySeletion.bind(this)
+    this.handleTimeSubmission = this.handleTimeSubmission.bind(this)
   }
 
   inputCounter = () => {
@@ -60,10 +61,11 @@ class Display extends Component {
       if (isValid === true) return moment.duration(end.diff(start)).asDays();
       return "0";
     }
-    return "0";
+    return this.state.finalTime;
   }
 
   handleTimeSubmission = (finalCount) => {
+    console.log(finalCount)
     this.setState({finalTime: finalCount})
   }
 
@@ -94,11 +96,11 @@ class Display extends Component {
         </div>
       )
     }
-    if (this.props.countBy === "Time" ) return <Time onTimeSubmission={this.state.handleTimeSubmission} />;
+    if (this.props.countBy === "Time" ) return <Time onTimeSubmission={this.handleTimeSubmission} />;
   }
 
   render () {
-    console.log(this.props.countBy)
+    console.log(this.state.finalTime)
   return (
     <DislayContainer>
       {this.handleCountBySeletion()}
