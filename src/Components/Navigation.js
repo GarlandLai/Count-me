@@ -24,6 +24,7 @@ const Navigation = (props) => {
       <StyledTab id="characters" onClick={() => props.onSelect("Character")}>Characters</StyledTab>
       <StyledTab id="words" onClick={() => props.onSelect("Words")}>Words</StyledTab>
       <StyledTab id="dates" onClick={() => props.onSelect("Dates")}>Dates</StyledTab>
+      <StyledTab id="time" onClick={() => props.onSelect("Time")}>Time</StyledTab>
     </NavContainer>
   )
 }

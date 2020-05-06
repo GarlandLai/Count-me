@@ -15,7 +15,7 @@ class App extends Component {
     super(props);
     this.state = {
       input: "",
-      countBy: "Dates",
+      countBy: "Time",
     }
     this.handleClear = this.handleClear.bind(this)
     this.handleChange = this.handleChange.bind(this)

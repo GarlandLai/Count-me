@@ -4,12 +4,13 @@ import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import moment from "moment";
+import Time from "./Time";
 
 const DislayContainer = styled.div`
   margin: 50px;
   background-color: grey;
   width: 100vw;
-  height: 400px;
+  height: 500px;
 `;
 
 const TextArea = styled.textarea`
@@ -23,6 +24,7 @@ const tableOfContent = (
   <p>Characters: Count by all characters</p>
   <p>Words: Count by words</p>
   <p>Dates: Find days between two specified dates</p>
+  <p>Time: Based on time output selected</p>
   </div>
 );
 
@@ -35,6 +37,7 @@ class Display extends Component {
       focusedInput: null,
     }
     this.inputCounter = this.inputCounter.bind(this)
+    this.handleCountBySeletion = this.handleCountBySeletion.bind(this)
   }
 
   inputCounter = () => {
@@ -56,11 +59,38 @@ class Display extends Component {
       if (isValid === true) return moment.duration(end.diff(start)).asDays();
       return "0";
     }
+    return "Time";
   }
+
+  handleCountBySeletion = () => {
+    if (this.props.countBy === "home" ) return tableOfContent;
+    if (this.props.countBy === "Dates") {
+      return(
+        <DateRangePicker
+        startDate={this.state.startDate} 
+        startDateId="start_date_id" 
+        endDate={this.state.endDate} 
+        endDateId="end_date_id"
+        onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
+        focusedInput={this.state.focusedInput}
+        onFocusChange={focusedInput => this.setState({ focusedInput })}
+        readOnly={true}
+        isOutsideRange={() => false}
+        showClearDates={true}
+      />
+    )
+  }
+    if (this.props.countBy === ("Characters" || "Words")) return <TextArea onChange={this.props.change} value={this.props.userInput} />;
+    if (this.props.countBy === "Time" ) return <Time />;
+ 
+  }
+
   render () {
+    console.log(this.props.countBy)
   return (
     <DislayContainer>
-      {this.props.countBy === "home" ? (
+      {this.handleCountBySeletion()}
+      {/* {this.props.countBy === "home" ? (
       <div>
       {tableOfContent}
       </div>) :
@@ -81,12 +111,12 @@ class Display extends Component {
           isOutsideRange={() => false}
           showClearDates={true}
         /> :
-      <TextArea onChange={this.props.change} value={this.props.userInput} />}
-        <br />
+      <TextArea onChange={this.props.change} value={this.props.userInput} />} */}
+        {/* <br />
         <input type="button" value="Clear" onClick={this.props.clicked}/>
         <p>Count = {this.inputCounter()}</p>
         </div>
-        )}
+        )} */}
       
     </DislayContainer>
   )
