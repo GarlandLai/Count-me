@@ -5,12 +5,17 @@ const Time = (props) => {
   const [dayInput, setDay] = useState(0);
   const [hourInput, setHour] = useState(0);
   const [minInput, setMinute] = useState(0);
+  const [selected, setSelect] =useState("");
 
   const handleChange = (e) => {
     e.persist()
     if (e.target.id === "day") setDay(e.target.value);
     if (e.target.id === "hour") setHour(e.target.value);
     if (e.target.id === "minute") setMinute(e.target.value);
+  }
+
+  const handleSelect = (e) => {
+    setSelect(e.target.value)
   }
 
   const countTimeInput = () => {
@@ -32,7 +37,15 @@ const Time = (props) => {
       <label>Minutes: </label>
       <input id="minute" type="number" onChange={(e)=>handleChange(e)} />
       <br/>
-      <button onClick={() => onTimeSubmission(finalCount)}></button>
+      <select id="selectBox" onChange={handleSelect} value={selected}>
+        <option value="">Select</option>
+        <option value="Days">Days</option>
+        <option value="Hours">Hours</option>
+        <option value="Minutes">Minutes</option>
+        <option value="Seconds">Seconds</option>
+      </select>
+      <button onClick={() => onTimeSubmission(finalCount)}>Submit</button>
+      <p>{selected}</p>
     </div>
   )
 }
