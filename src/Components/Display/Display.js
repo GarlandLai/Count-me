@@ -100,11 +100,10 @@ class Display extends Component {
   }
 
   render () {
-    console.log(this.state.finalTime)
   return (
     <DislayContainer>
       {this.handleCountBySeletion()}
-      {this.props.countBy === "home" ? null :
+      {this.props.countBy === "home" || this.props.countBy === "Time" ? null :
       <p>Count = {this.inputCounter()}</p>}
     </DislayContainer>
   )

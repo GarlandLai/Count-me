@@ -14,15 +14,23 @@ const Time = (props) => {
   }
 
   const countTimeInput = () => {
-    return dayInput * 86400
+     const day = dayInput * 86400;
+     const hour = hourInput * 3600;
+     const minute = minInput * 60;
+    return day + hour + minute
   }
   const finalCount = countTimeInput();
 
   return(
     <div>
-      <input id="day" type="number" onChange={(e)=>handleChange(e)}></input>
-      <input id="hour" type="number"></input>
-      <input id="minute" type="number"></input>
+      <label> Days:</label>
+        <input id="day" type="number" onChange={(e)=>handleChange(e)}/>
+      <br/>
+      <label>Hours:</label>
+      <input id="hour" type="number" onChange={(e)=>handleChange(e)} />
+      <br/>
+      <label>Minutes: </label>
+      <input id="minute" type="number" onChange={(e)=>handleChange(e)} />
       <br/>
       <button onClick={() => onTimeSubmission(finalCount)}></button>
     </div>
