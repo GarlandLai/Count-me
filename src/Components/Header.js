@@ -1,23 +1,24 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-const HeaderContainer = styled.div`
-`;
+const HeaderContainer = styled.div``;
 
 const StyledHeader = styled.div`
-  color: white;
-  background-color: grey;
-  font-size: 24px;
-  height: 100px;
-  width: 100vw;
+	color: black;
+	font-size: 70px;
+	font-weight: 700;
+	padding: 50px 0;
+	height: 200px;
+	width: 100vw;
+	background-color: grey;
 `;
 
 const Header = () => {
-  return (
-    <HeaderContainer>
-      <StyledHeader>All Things Counting!</StyledHeader>
-    </HeaderContainer>
-  )
-}
+	return (
+		<HeaderContainer>
+			<StyledHeader>All Things Counting</StyledHeader>
+		</HeaderContainer>
+	);
+};
 
 export default Header;
