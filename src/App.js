@@ -34,12 +34,14 @@ class App extends Component {
 	};
 
 	handleClear = () => {
+		console.log('cleared', this.state.input);
 		this.setState({
-			countBy: this.state.countBy,
+			input: '',
 		});
 	};
 
 	handleChange = (event) => {
+		console.log(event.target.value);
 		this.setState({
 			input: event.target.value,
 		});

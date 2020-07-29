@@ -95,7 +95,9 @@ class Display extends Component {
 				<div>
 					<TextArea onChange={this.props.change} value={this.props.userInput} />
 					<br />
-					<input type="button" value="Clear" onClick={this.props.clicked} />
+					<button type="button" onClick={this.props.clicked}>
+						Clear
+					</button>
 				</div>
 			);
 		}
