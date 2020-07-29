@@ -21,11 +21,11 @@ const TextArea = styled.textarea`
 
 const tableOfContent = (
 	<div>
-		<h1>Please choose selection</h1>
-		<p>Characters: Count by all characters</p>
-		<p>Words: Count by words</p>
-		<p>Dates: Find days between two specified dates</p>
-		<p>Time: Based on time output selected</p>
+		<h1>Please make a selection! Count by:</h1>
+		<h3>Characters: Count by all characters</h3>
+		<h3>Words: Count by words</h3>
+		<h3>Dates: Find days between two specified dates</h3>
+		<h3>Time: Based on time output selected</h3>
 	</div>
 );
 
