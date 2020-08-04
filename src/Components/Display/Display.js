@@ -71,7 +71,7 @@ class Display extends Component {
 	};
 
 	handleCountBySeletion = () => {
-		if (this.props.countBy === 'home') return tableOfContent;
+		if (this.props.countBy === 'Home') return tableOfContent;
 		if (this.props.countBy === 'Dates') {
 			return (
 				<DateRangePicker
@@ -109,7 +109,7 @@ class Display extends Component {
 		return (
 			<DislayContainer>
 				{this.handleCountBySeletion()}
-				{this.props.countBy === 'home' ||
+				{this.props.countBy === 'Home' ||
 				this.props.countBy === 'Time' ? null : (
 					<p>Count = {this.inputCounter()}</p>
 				)}
