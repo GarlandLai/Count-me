@@ -62,7 +62,10 @@ class Display extends Component {
 			if (isValid === true) return moment.duration(end.diff(start)).asDays();
 			return '0';
 		}
-		return this.state.finalTime;
+		// return this.state.finalTime;
+		if (this.props.countBy === 'Time') {
+			return this.state.finalTime;
+		}
 	};
 
 	handleTimeSubmission = (finalCount) => {
