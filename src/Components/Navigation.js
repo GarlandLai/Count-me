@@ -26,7 +26,7 @@ const StyledTab = styled.button`
 const Navigation = (props) => {
 	return (
 		<NavContainer>
-			<StyledTab id="home" onClick={() => props.onSelect('home')}>
+			<StyledTab id="home" onClick={() => props.onSelect('Home')}>
 				Home
 			</StyledTab>
 			<StyledTab id="characters" onClick={() => props.onSelect('Character')}>

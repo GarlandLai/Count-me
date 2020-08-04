@@ -74,6 +74,7 @@ class Display extends Component {
 	};
 
 	handleCountBySeletion = () => {
+		console.log(this.props.countBy);
 		if (this.props.countBy === 'Home') return tableOfContent;
 		if (this.props.countBy === 'Dates') {
 			return (
