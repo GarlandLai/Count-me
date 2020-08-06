@@ -11,7 +11,7 @@ const DislayContainer = styled.div`
 	background-color: grey;
 	width: 100vw;
 	height: 500px;
-	padding: 150px 0;
+	padding-top: 100px;
 `;
 
 const TextArea = styled.textarea`
@@ -68,8 +68,10 @@ class Display extends Component {
 		}
 	};
 
-	handleTimeSubmission = (finalCount) => {
-		console.log(finalCount);
+	handleTimeSubmission = (finalCount, selected) => {
+		console.log('final', finalCount);
+		console.log('selected', selected);
+		const updatedFinalCount = () => {};
 		this.setState({ finalTime: finalCount });
 	};
 

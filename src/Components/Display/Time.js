@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const Input = styled.input`
 	text-align: center;
+	margin: 5px 0px;
 `;
 
 const Select = styled.select`
@@ -58,15 +59,15 @@ const Time = (props) => {
 			<Input id="minute" type="number" onChange={(e) => handleChange(e)} />
 			<br />
 			<br />
-			<br />
 			<Select id="selectBox" onChange={handleSelect} value={selected}>
-				<option value="">Select</option>
-				<option value="Days">Days</option>
-				<option value="Hours">Hours</option>
-				<option value="Minutes">Minutes</option>
 				<option value="Seconds">Seconds</option>
+				<option value="Minutes">Minutes</option>
+				<option value="Hours">Hours</option>
+				<option value="Days">Days</option>
 			</Select>
-			<Button onClick={() => onTimeSubmission(finalCount)}>Submit</Button>
+			<Button onClick={() => onTimeSubmission(finalCount, selected)}>
+				Submit
+			</Button>
 			{/* Need to figure out to show count. */}
 			<p>{selected}</p>
 		</div>
