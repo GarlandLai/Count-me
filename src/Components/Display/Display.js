@@ -113,8 +113,7 @@ class Display extends Component {
 		return (
 			<DislayContainer>
 				{this.handleCountBySeletion()}
-				{this.props.countBy === 'Home' ||
-				this.props.countBy === 'Time' ? null : (
+				{this.props.countBy === 'Home' ? null : (
 					<p>Count = {this.inputCounter()}</p>
 				)}
 			</DislayContainer>

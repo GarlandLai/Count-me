@@ -33,7 +33,7 @@ const Time = (props) => {
 		setSelect(e.target.value);
 	};
 
-	const countTimeInput = () => {
+	const countTimeInputInSeconds = () => {
 		const day = dayInput * 86400;
 		const hour = hourInput * 3600;
 		const minute = minInput * 60;
@@ -41,30 +41,23 @@ const Time = (props) => {
 	};
 
 	// Final count in seconds
-	const finalCount = countTimeInput();
+	const finalCount = countTimeInputInSeconds();
 
 	return (
 		<div>
-			<Input
-				placeholder="Days"
-				id="day"
-				type="number"
-				onChange={(e) => handleChange(e)}
-			/>
+			<label>Days</label>
 			<br />
-			<Input
-				placeholder="Hours"
-				id="hour"
-				type="number"
-				onChange={(e) => handleChange(e)}
-			/>
+			<Input id="day" type="number" onChange={(e) => handleChange(e)} />
 			<br />
-			<Input
-				placeholder="Minutes"
-				id="minute"
-				type="number"
-				onChange={(e) => handleChange(e)}
-			/>
+			<label>Hours</label>
+			<br />
+			<Input id="hour" type="number" onChange={(e) => handleChange(e)} />
+			<br />
+			<label>Minutes</label>
+			<br />
+			<Input id="minute" type="number" onChange={(e) => handleChange(e)} />
+			<br />
+			<br />
 			<br />
 			<Select id="selectBox" onChange={handleSelect} value={selected}>
 				<option value="">Select</option>
@@ -74,6 +67,7 @@ const Time = (props) => {
 				<option value="Seconds">Seconds</option>
 			</Select>
 			<Button onClick={() => onTimeSubmission(finalCount)}>Submit</Button>
+			{/* Need to figure out to show count. */}
 			<p>{selected}</p>
 		</div>
 	);
