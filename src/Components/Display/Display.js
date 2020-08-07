@@ -68,11 +68,22 @@ class Display extends Component {
 		}
 	};
 
+	updatedFinalCount = (seconds, selected) => {
+		const minutes = seconds / 60;
+		const hours = seconds / 3600;
+		const days = seconds / 86400;
+		if (selected === 'Seconds') return seconds;
+		if (selected === 'Minutes') return minutes;
+		if (selected === 'Hours') return hours;
+		if (selected === 'Days') return days;
+	};
+
 	handleTimeSubmission = (finalCount, selected) => {
 		console.log('final', finalCount);
 		console.log('selected', selected);
-		const updatedFinalCount = () => {};
-		this.setState({ finalTime: finalCount });
+		const updatedCount = this.updatedFinalCount(finalCount, selected);
+		console.log(updatedCount);
+		this.setState({ finalTime: updatedCount });
 	};
 
 	handleCountBySeletion = () => {
