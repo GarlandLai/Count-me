@@ -21,7 +21,7 @@ const Time = (props) => {
 	const [dayInput, setDay] = useState(0);
 	const [hourInput, setHour] = useState(0);
 	const [minInput, setMinute] = useState(0);
-	const [selected, setSelect] = useState('');
+	const [selected, setSelect] = useState('Seconds');
 
 	const handleChange = (e) => {
 		e.persist();
