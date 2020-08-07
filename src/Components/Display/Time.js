@@ -68,8 +68,6 @@ const Time = (props) => {
 			<Button onClick={() => onTimeSubmission(finalCount, selected)}>
 				Submit
 			</Button>
-			{/* Need to figure out to show count. */}
-			<p>{selected}</p>
 		</div>
 	);
 };

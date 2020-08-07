@@ -75,7 +75,7 @@ class Display extends Component {
 		if (selected === 'Seconds') return seconds;
 		if (selected === 'Minutes') return minutes;
 		if (selected === 'Hours') return hours;
-		if (selected === 'Days') return days;
+		if (selected === 'Days') return days.toFixed(2);
 	};
 
 	handleTimeSubmission = (finalCount, selected) => {
