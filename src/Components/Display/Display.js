@@ -72,10 +72,10 @@ class Display extends Component {
 		const minutes = seconds / 60;
 		const hours = seconds / 3600;
 		const days = seconds / 86400;
-		if (selected === 'Seconds') return seconds;
-		if (selected === 'Minutes') return minutes;
-		if (selected === 'Hours') return hours;
-		if (selected === 'Days') return days.toFixed(2);
+		if (selected === 'Seconds') return seconds + ' seconds';
+		if (selected === 'Minutes') return minutes + ' minutes';
+		if (selected === 'Hours') return hours.toFixed(2) + ' hours';
+		if (selected === 'Days') return days.toFixed(2) + ' days';
 	};
 
 	handleTimeSubmission = (finalCount, selected) => {
