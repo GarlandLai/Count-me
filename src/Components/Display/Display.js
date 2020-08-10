@@ -122,12 +122,18 @@ class Display extends Component {
 			return <Time onTimeSubmission={this.handleTimeSubmission} />;
 	};
 
+	selectedCountType = () => {
+		if (this.props.countBy === 'Time') return this.selected;
+		if (this.props.countBy === 'Dates') return 'Days';
+		else return this.props.countBy;
+	};
+
 	render() {
 		return (
 			<DislayContainer>
 				{this.handleCountBySeletion()}
 				{this.props.countBy === 'Home' ? null : (
-					<p>Count = {this.inputCounter()}</p>
+					<p>Count = {this.inputCounter() + ' ' + this.selectedCountType()}</p>
 				)}
 			</DislayContainer>
 		);
