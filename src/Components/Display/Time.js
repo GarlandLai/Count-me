@@ -49,14 +49,17 @@ const Time = (props) => {
 			<label>Days</label>
 			<br />
 			<Input id="day" type="number" onChange={(e) => handleChange(e)} />
+			<Button onClick={() => console.log('Need logic')}>Clear</Button>
 			<br />
 			<label>Hours</label>
 			<br />
 			<Input id="hour" type="number" onChange={(e) => handleChange(e)} />
+			<Button onClick={() => console.log('Need logic')}>Clear</Button>
 			<br />
 			<label>Minutes</label>
 			<br />
 			<Input id="minute" type="number" onChange={(e) => handleChange(e)} />
+			<Button onClick={() => console.log('Need logic')}>Clear</Button>
 			<br />
 			<br />
 			<Select id="selectBox" onChange={handleSelect} value={selected}>
@@ -68,7 +71,6 @@ const Time = (props) => {
 			<Button onClick={() => onTimeSubmission(finalCount, selected)}>
 				Submit
 			</Button>
-			<Button onClick={() => console.log('Need logic')}>Clear</Button>
 		</div>
 	);
 };
