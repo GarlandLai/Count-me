@@ -80,16 +80,12 @@ class Display extends Component {
 	};
 
 	handleTimeSubmission = (finalCount, selected) => {
-		console.log('final', finalCount);
-		console.log('selected', selected);
 		const updatedCount = this.updatedFinalCount(finalCount, selected);
-		console.log(updatedCount);
 		this.setState({ finalTime: updatedCount });
 		this.setState({ selected: selected });
 	};
 
 	handleCountBySeletion = () => {
-		console.log(this.props.countBy);
 		if (this.props.countBy === 'Home') return tableOfContent;
 		if (this.props.countBy === 'Dates') {
 			return (

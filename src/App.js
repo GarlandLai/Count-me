@@ -34,14 +34,12 @@ class App extends Component {
 	};
 
 	handleClear = () => {
-		console.log('cleared', this.state.input);
 		this.setState({
 			input: '',
 		});
 	};
 
 	handleChange = (event) => {
-		console.log(event.target.value);
 		this.setState({
 			input: event.target.value,
 		});
