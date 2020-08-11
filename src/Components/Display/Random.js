@@ -6,12 +6,21 @@ const TextArea = styled.textarea`
 	height: 200px;
 `;
 
-const Random = () => {
+const Random = (props) => {
+	console.log(props);
 	return (
 		<div>
-			<TextArea />
+			<TextArea onChange={props.change} value={props.value} />
 			<br />
-			<button onClick={() => console.log('choosing')}>Choose Random</button>
+			<button
+				type="button"
+				onClick={() => console.log('need logic to send to App input')}
+			>
+				Choose Random
+			</button>
+			<button type="button" onClick={props.clicked}>
+				Clear
+			</button>
 		</div>
 	);
 };

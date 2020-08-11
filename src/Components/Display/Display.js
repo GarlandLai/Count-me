@@ -123,7 +123,14 @@ class Display extends Component {
 		}
 		if (this.props.countBy === 'Time')
 			return <Time onTimeSubmission={this.handleTimeSubmission} />;
-		if (this.props.countBy === 'Random') return <Random />;
+		if (this.props.countBy === 'Random')
+			return (
+				<Random
+					clicked={this.props.clicked}
+					change={this.props.change}
+					value={this.props.userInput}
+				/>
+			);
 	};
 
 	selectedCountType = () => {

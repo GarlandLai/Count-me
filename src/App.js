@@ -46,6 +46,7 @@ class App extends Component {
 	};
 
 	render() {
+		console.log(this.state.input);
 		return (
 			<StyledDiv className="App">
 				<Header />
