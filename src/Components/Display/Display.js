@@ -80,6 +80,7 @@ class Display extends Component {
 	};
 
 	handleTimeSubmission = (finalCount, selected) => {
+		// debugger;
 		const updatedCount = this.updatedFinalCount(finalCount, selected);
 		this.setState({ finalTime: updatedCount });
 		this.setState({ selected: selected });
