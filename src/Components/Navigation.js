@@ -41,6 +41,9 @@ const Navigation = (props) => {
 			<StyledTab id="time" onClick={() => props.onSelect('Time')}>
 				Time
 			</StyledTab>
+			<StyledTab id="random" onClick={() => props.onSelect('Random')}>
+				Random
+			</StyledTab>
 		</NavContainer>
 	);
 };

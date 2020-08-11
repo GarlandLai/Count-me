@@ -5,6 +5,7 @@ import { DateRangePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
 import Time from './Time';
+import Random from './Random';
 
 const DislayContainer = styled.div`
 	margin: 50px;
@@ -67,6 +68,9 @@ class Display extends Component {
 		if (this.props.countBy === 'Time') {
 			return this.state.finalTime;
 		}
+		if (this.props.countBy === 'Random') {
+			return 'Random choice';
+		}
 	};
 
 	updatedFinalCount = (seconds, selected) => {
@@ -119,11 +123,13 @@ class Display extends Component {
 		}
 		if (this.props.countBy === 'Time')
 			return <Time onTimeSubmission={this.handleTimeSubmission} />;
+		if (this.props.countBy === 'Random') return <Random />;
 	};
 
 	selectedCountType = () => {
 		if (this.props.countBy === 'Time') return this.state.selected;
 		if (this.props.countBy === 'Dates') return 'Days';
+		if (this.props.countBy === 'Random') return '';
 		else return this.props.countBy;
 	};
 
