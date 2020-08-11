@@ -37,6 +37,7 @@ class Display extends Component {
 			endDate: null,
 			focusedInput: null,
 			finalTime: 0,
+			selected: 'Seconds',
 		};
 		this.inputCounter = this.inputCounter.bind(this);
 		this.handleCountBySeletion = this.handleCountBySeletion.bind(this);
@@ -72,10 +73,10 @@ class Display extends Component {
 		const minutes = seconds / 60;
 		const hours = seconds / 3600;
 		const days = seconds / 86400;
-		if (selected === 'Seconds') return seconds + ' seconds';
-		if (selected === 'Minutes') return minutes + ' minutes';
-		if (selected === 'Hours') return hours.toFixed(2) + ' hours';
-		if (selected === 'Days') return days.toFixed(2) + ' days';
+		if (selected === 'Seconds') return seconds;
+		if (selected === 'Minutes') return minutes;
+		if (selected === 'Hours') return hours.toFixed(2);
+		if (selected === 'Days') return days.toFixed(2);
 	};
 
 	handleTimeSubmission = (finalCount, selected) => {
@@ -84,6 +85,7 @@ class Display extends Component {
 		const updatedCount = this.updatedFinalCount(finalCount, selected);
 		console.log(updatedCount);
 		this.setState({ finalTime: updatedCount });
+		this.setState({ selected: selected });
 	};
 
 	handleCountBySeletion = () => {
@@ -123,7 +125,7 @@ class Display extends Component {
 	};
 
 	selectedCountType = () => {
-		if (this.props.countBy === 'Time') return this.selected;
+		if (this.props.countBy === 'Time') return this.state.selected;
 		if (this.props.countBy === 'Dates') return 'Days';
 		else return this.props.countBy;
 	};
