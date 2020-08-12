@@ -17,7 +17,7 @@ const Button = styled.button`
 `;
 
 const Time = (props) => {
-	const { onTimeSubmission, clicked } = props;
+	const { onTimeSubmission } = props;
 	const [dayInput, setDay] = useState(0);
 	const [hourInput, setHour] = useState(0);
 	const [minInput, setMinute] = useState(0);
@@ -51,11 +51,12 @@ const Time = (props) => {
 	};
 
 	const handleClearAll = () => {
+		debugger;
 		setDay(0);
 		setHour(0);
 		setMinute(0);
 		// only clears on second click?
-		onTimeSubmission(finalCount, selected);
+		// onTimeSubmission(finalCount, selected);
 	};
 
 	return (
@@ -107,9 +108,9 @@ const Time = (props) => {
 			<Button onClick={() => onTimeSubmission(finalCount, selected)}>
 				Submit
 			</Button>
-			<Button id="all" onClick={() => handleClearAll()}>
+			{/* <Button type="button" id="all" onClick={() => handleClearAll()}>
 				Clear all
-			</Button>
+			</Button> */}
 		</div>
 	);
 };

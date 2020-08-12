@@ -74,6 +74,7 @@ class Display extends Component {
 	};
 
 	updatedFinalCount = (seconds, selected) => {
+		debugger;
 		const minutes = seconds / 60;
 		const hours = seconds / 3600;
 		const days = seconds / 86400;
@@ -84,7 +85,8 @@ class Display extends Component {
 	};
 
 	handleTimeSubmission = (finalCount, selected) => {
-		// debugger;
+		debugger;
+		console.log('TimeSubmit');
 		const updatedCount = this.updatedFinalCount(finalCount, selected);
 		this.setState({ finalTime: updatedCount });
 		this.setState({ selected: selected });
@@ -122,12 +124,7 @@ class Display extends Component {
 			);
 		}
 		if (this.props.countBy === 'Time')
-			return (
-				<Time
-					onTimeSubmission={this.handleTimeSubmission}
-					clicked={this.props.clicked}
-				/>
-			);
+			return <Time onTimeSubmission={this.handleTimeSubmission} />;
 		if (this.props.countBy === 'Random')
 			return (
 				<Random
