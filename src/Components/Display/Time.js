@@ -51,12 +51,12 @@ const Time = (props) => {
 	};
 
 	const handleClearAll = () => {
-		debugger;
+		// debugger;
 		setDay(0);
 		setHour(0);
 		setMinute(0);
 		// only clears on second click?
-		// onTimeSubmission(finalCount, selected);
+		onTimeSubmission(0, selected);
 	};
 
 	return (
@@ -108,9 +108,9 @@ const Time = (props) => {
 			<Button onClick={() => onTimeSubmission(finalCount, selected)}>
 				Submit
 			</Button>
-			{/* <Button type="button" id="all" onClick={() => handleClearAll()}>
+			<Button type="button" onClick={() => handleClearAll()}>
 				Clear all
-			</Button> */}
+			</Button>
 		</div>
 	);
 };
