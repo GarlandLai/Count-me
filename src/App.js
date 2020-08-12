@@ -34,7 +34,6 @@ class App extends Component {
 	};
 
 	handleClear = () => {
-		console.log('App Clear');
 		this.setState({
 			input: '',
 		});
@@ -47,7 +46,6 @@ class App extends Component {
 	};
 
 	render() {
-		console.log(this.state.input);
 		return (
 			<StyledDiv className="App">
 				<Header />

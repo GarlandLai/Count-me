@@ -41,7 +41,6 @@ const Time = (props) => {
 		return day + hour + minute;
 	};
 
-	// Final count in seconds
 	const finalCount = countTimeInputInSeconds();
 
 	const handleDayClear = (e) => {
@@ -51,11 +50,9 @@ const Time = (props) => {
 	};
 
 	const handleClearAll = () => {
-		// debugger;
 		setDay(0);
 		setHour(0);
 		setMinute(0);
-		// only clears on second click?
 		onTimeSubmission(0, selected);
 	};
 
