@@ -122,7 +122,12 @@ class Display extends Component {
 			);
 		}
 		if (this.props.countBy === 'Time')
-			return <Time onTimeSubmission={this.handleTimeSubmission} />;
+			return (
+				<Time
+					onTimeSubmission={this.handleTimeSubmission}
+					clicked={this.props.clicked}
+				/>
+			);
 		if (this.props.countBy === 'Random')
 			return (
 				<Random

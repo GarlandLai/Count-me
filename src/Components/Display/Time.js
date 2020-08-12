@@ -17,7 +17,7 @@ const Button = styled.button`
 `;
 
 const Time = (props) => {
-	const { onTimeSubmission } = props;
+	const { onTimeSubmission, clicked } = props;
 	const [dayInput, setDay] = useState(0);
 	const [hourInput, setHour] = useState(0);
 	const [minInput, setMinute] = useState(0);
@@ -44,22 +44,58 @@ const Time = (props) => {
 	// Final count in seconds
 	const finalCount = countTimeInputInSeconds();
 
+	const handleDayClear = (e) => {
+		if (e.target.id === 'day') setDay(0);
+		if (e.target.id === 'hour') setHour(0);
+		if (e.target.id === 'minute') setMinute(0);
+	};
+
+	const handleClearAll = () => {
+		setDay(0);
+		setHour(0);
+		setMinute(0);
+		// only clears on second click?
+		onTimeSubmission(finalCount, selected);
+	};
+
 	return (
 		<div>
-			<label>Days</label>
+			<Input
+				id="day"
+				type="number"
+				value={dayInput}
+				onChange={(e) => handleChange(e)}
+			/>
 			<br />
-			<Input id="day" type="number" onChange={(e) => handleChange(e)} />
-			<Button onClick={() => console.log('Need logic')}>Clear</Button>
+			<label>Days</label>
+			<Button id="day" onClick={(e) => handleDayClear(e)}>
+				Clear
+			</Button>
+			<br />
+
+			<Input
+				id="hour"
+				type="number"
+				value={hourInput}
+				onChange={(e) => handleChange(e)}
+			/>
 			<br />
 			<label>Hours</label>
+			<Button id="hour" onClick={(e) => handleDayClear(e)}>
+				Clear
+			</Button>
 			<br />
-			<Input id="hour" type="number" onChange={(e) => handleChange(e)} />
-			<Button onClick={() => console.log('Need logic')}>Clear</Button>
+			<Input
+				id="minute"
+				value={minInput}
+				type="number"
+				onChange={(e) => handleChange(e)}
+			/>
 			<br />
 			<label>Minutes</label>
-			<br />
-			<Input id="minute" type="number" onChange={(e) => handleChange(e)} />
-			<Button onClick={() => console.log('Need logic')}>Clear</Button>
+			<Button id="minute" onClick={(e) => handleDayClear(e)}>
+				Clear
+			</Button>
 			<br />
 			<br />
 			<Select id="selectBox" onChange={handleSelect} value={selected}>
@@ -70,6 +106,9 @@ const Time = (props) => {
 			</Select>
 			<Button onClick={() => onTimeSubmission(finalCount, selected)}>
 				Submit
+			</Button>
+			<Button id="all" onClick={() => handleClearAll()}>
+				Clear all
 			</Button>
 		</div>
 	);
