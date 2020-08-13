@@ -7,18 +7,19 @@ const TextArea = styled.textarea`
 `;
 
 const Random = (props) => {
-	const { value, change } = props;
-	const pickRandom = (value) => {
-		const splitByComma = value.split(',');
-		console.log(splitByComma);
-		return splitByComma.sample();
-	};
+	const { value, change, randomPick } = props;
+
+	// const pickRandom = () => {
+	// 	const splitByComma = value.split(',');
+	// 	console.log(splitByComma);
+	// 	return splitByComma[Math.floor(Math.random() * splitByComma.length)];
+	// };
 
 	return (
 		<div>
 			<TextArea onChange={change} value={value} />
 			<br />
-			<button type="button" id="random" onClick={() => pickRandom(value)}>
+			<button type="button" id="random" onClick={() => randomPick()}>
 				Choose Random
 			</button>
 			<button type="button" onClick={props.clicked}>

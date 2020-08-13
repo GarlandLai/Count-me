@@ -89,6 +89,13 @@ class Display extends Component {
 		this.setState({ selected: selected });
 	};
 
+	pickRandom = (value) => {
+		const splitByComma = value.split(',');
+		console.log(splitByComma);
+		console.log(splitByComma[Math.floor(Math.random() * splitByComma.length)]);
+		return splitByComma[Math.floor(Math.random() * splitByComma.length)];
+	};
+
 	handleCountBySeletion = () => {
 		if (this.props.countBy === 'Home') return tableOfContent;
 		if (this.props.countBy === 'Dates') {
@@ -128,6 +135,7 @@ class Display extends Component {
 					clicked={this.props.clicked}
 					change={this.props.change}
 					value={this.props.userInput}
+					randomPick={() => this.pickRandom(this.props.userInput)}
 				/>
 			);
 	};
