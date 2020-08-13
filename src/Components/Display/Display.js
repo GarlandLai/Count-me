@@ -64,7 +64,6 @@ class Display extends Component {
 			if (isValid === true) return moment.duration(end.diff(start)).asDays();
 			return '0';
 		}
-		// return this.state.finalTime;
 		if (this.props.countBy === 'Time') {
 			return this.state.finalTime;
 		}
@@ -91,8 +90,6 @@ class Display extends Component {
 
 	pickRandom = (value) => {
 		const splitByComma = value.split(',');
-		console.log(splitByComma);
-		console.log(splitByComma[Math.floor(Math.random() * splitByComma.length)]);
 		return splitByComma[Math.floor(Math.random() * splitByComma.length)];
 	};
 
