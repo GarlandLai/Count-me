@@ -151,6 +151,8 @@ class Display extends Component {
 				{this.props.countBy === 'Home' ? null : (
 					<p>Count = {this.inputCounter() + ' ' + this.selectedCountType()}</p>
 				)}
+				{/* This is choosing the random before pressing the button */}
+				<p>Random Count: {this.pickRandom(this.props.userInput)}</p>
 			</DislayContainer>
 		);
 	}

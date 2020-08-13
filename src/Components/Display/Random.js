@@ -12,7 +12,7 @@ const Random = (props) => {
 		<div>
 			<TextArea onChange={change} value={value} />
 			<br />
-			<button type="button" id="random" onClick={() => randomPick()}>
+			<button type="button" id="random" onClick={() => randomPick(value)}>
 				Choose Random
 			</button>
 			<button type="button" onClick={props.clicked}>
