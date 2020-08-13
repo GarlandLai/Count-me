@@ -88,10 +88,10 @@ class Display extends Component {
 		this.setState({ selected: selected });
 	};
 
-	pickRandom = (value) => {
-		const splitByComma = value.split(',');
-		return splitByComma[Math.floor(Math.random() * splitByComma.length)];
-	};
+	// pickRandom = (value) => {
+	// 	const splitByComma = value.split(',');
+	// 	return splitByComma[Math.floor(Math.random() * splitByComma.length)];
+	// };
 
 	handleCountBySeletion = () => {
 		if (this.props.countBy === 'Home') return tableOfContent;
@@ -132,7 +132,7 @@ class Display extends Component {
 					clicked={this.props.clicked}
 					change={this.props.change}
 					value={this.props.userInput}
-					randomPick={() => this.pickRandom(this.props.userInput)}
+					// randomPick={() => this.pickRandom(this.props.userInput)}
 				/>
 			);
 	};
@@ -152,7 +152,7 @@ class Display extends Component {
 					<p>Count = {this.inputCounter() + ' ' + this.selectedCountType()}</p>
 				)}
 				{/* This is choosing the random before pressing the button */}
-				<p>Random Count: {this.pickRandom(this.props.userInput)}</p>
+				{/* <p>Random Count: {this.pickRandom(this.props.userInput)}</p> */}
 			</DislayContainer>
 		);
 	}
