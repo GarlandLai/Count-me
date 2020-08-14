@@ -18,6 +18,8 @@ const Random = (props) => {
 		);
 	};
 
+	console.log('isShowing', isShowing);
+	console.log('value', value);
 	return (
 		<div>
 			<TextArea onChange={change} value={value} />
