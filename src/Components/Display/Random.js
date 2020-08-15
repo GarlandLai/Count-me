@@ -15,9 +15,11 @@ const Random = (props) => {
 		console.log('NOSpaces', removeWhiteSpaces);
 		const splitByComma = removeWhiteSpaces.split(',');
 		console.log('split', splitByComma);
-		const cleanArray = splitByComma.forEach((item) => {
-			debugger;
-			if (item[0] !== '') return item;
+		let cleanArray = [];
+		splitByComma.forEach((item) => {
+			// debugger;
+			// console.log(item[0]);
+			if (item[0] !== undefined) return cleanArray.push(item);
 		});
 		console.log('cleanArray', cleanArray);
 		// need to remove spaces
