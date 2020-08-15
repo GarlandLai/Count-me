@@ -11,15 +11,23 @@ const Random = (props) => {
 	const [isShowing, setShow] = useState('Press choose random');
 
 	const pickRandom = (value) => {
-		const splitByComma = value.split(',');
+		const removeWhiteSpaces = value.replace(/ /g, '');
+		console.log('NOSpaces', removeWhiteSpaces);
+		const splitByComma = removeWhiteSpaces.split(',');
+		console.log('split', splitByComma);
+		const cleanArray = splitByComma.forEach((item) => {
+			debugger;
+			if (item[0] !== '') return item;
+		});
+		console.log('cleanArray', cleanArray);
 		// need to remove spaces
 		return setShow(
 			splitByComma[Math.floor(Math.random() * splitByComma.length)]
 		);
 	};
 
-	console.log('isShowing', isShowing);
-	console.log('value', value);
+	// console.log('isShowing', isShowing);
+	// console.log('value', value);
 	return (
 		<div>
 			<TextArea onChange={change} value={value} />
