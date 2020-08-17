@@ -23,9 +23,12 @@ const Random = (props) => {
 		});
 		console.log('cleanArray', cleanArray);
 		// need to remove spaces
-		return setShow(
-			splitByComma[Math.floor(Math.random() * splitByComma.length)]
-		);
+		return setShow(cleanArray[Math.floor(Math.random() * cleanArray.length)]);
+	};
+
+	const clearAll = () => {
+		props.clicked();
+		setShow('Press choose random');
 	};
 
 	// console.log('isShowing', isShowing);
@@ -37,7 +40,7 @@ const Random = (props) => {
 			<button type="button" id="random" onClick={() => pickRandom(value)}>
 				Choose Random
 			</button>
-			<button type="button" onClick={props.clicked}>
+			<button type="button" onClick={() => clearAll()}>
 				Clear
 			</button>
 			<p>Random Count: {isShowing}</p>
