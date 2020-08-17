@@ -88,11 +88,6 @@ class Display extends Component {
 		this.setState({ selected: selected });
 	};
 
-	// pickRandom = (value) => {
-	// 	const splitByComma = value.split(',');
-	// 	return splitByComma[Math.floor(Math.random() * splitByComma.length)];
-	// };
-
 	handleCountBySeletion = () => {
 		if (this.props.countBy === 'Home') return tableOfContent;
 		if (this.props.countBy === 'Dates') {
@@ -152,8 +147,6 @@ class Display extends Component {
 				this.props.countBy === 'Random' ? null : (
 					<p>Count = {this.inputCounter() + ' ' + this.selectedCountType()}</p>
 				)}
-				{/* This is choosing the random before pressing the button */}
-				{/* <p>Random Count: {this.pickRandom(this.props.userInput)}</p> */}
 			</DislayContainer>
 		);
 	}

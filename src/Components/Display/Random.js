@@ -12,17 +12,11 @@ const Random = (props) => {
 
 	const pickRandom = (value) => {
 		const removeWhiteSpaces = value.replace(/ /g, '');
-		console.log('NOSpaces', removeWhiteSpaces);
 		const splitByComma = removeWhiteSpaces.split(',');
-		console.log('split', splitByComma);
 		let cleanArray = [];
 		splitByComma.forEach((item) => {
-			// debugger;
-			// console.log(item[0]);
 			if (item[0] !== undefined) return cleanArray.push(item);
 		});
-		console.log('cleanArray', cleanArray);
-		// need to remove spaces
 		return setShow(cleanArray[Math.floor(Math.random() * cleanArray.length)]);
 	};
 
@@ -31,8 +25,6 @@ const Random = (props) => {
 		setShow('Press choose random');
 	};
 
-	// console.log('isShowing', isShowing);
-	// console.log('value', value);
 	return (
 		<div>
 			<TextArea onChange={change} value={value} />
