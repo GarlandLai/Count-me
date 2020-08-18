@@ -18,7 +18,7 @@ const StyledTab = styled.button`
 	font-size: 20px;
 	font-weight: 700;
 	width: 200px;
-	height: 90px;
+	height: 75px;
 	margin: 5px 0;
 	background-color: grey;
 `;
