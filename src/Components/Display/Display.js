@@ -27,6 +27,7 @@ const tableOfContent = (
 		<h3>Words: Count by words</h3>
 		<h3>Dates: Find days between two specified dates</h3>
 		<h3>Time: Based on time output selected</h3>
+		<h3>Random: Choose a random input</h3>
 	</div>
 );
 

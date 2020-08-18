@@ -16,7 +16,7 @@ const StyledHeader = styled.div`
 const Header = () => {
 	return (
 		<HeaderContainer>
-			<StyledHeader>All Things Counting</StyledHeader>
+			<StyledHeader>Random Tools</StyledHeader>
 		</HeaderContainer>
 	);
 };

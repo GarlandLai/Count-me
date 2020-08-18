@@ -27,6 +27,8 @@ const Random = (props) => {
 
 	return (
 		<div>
+			<h3>Enter in a list of items separated by commas</h3>
+			<br />
 			<TextArea onChange={change} value={value} />
 			<br />
 			<button type="button" id="random" onClick={() => pickRandom(value)}>
