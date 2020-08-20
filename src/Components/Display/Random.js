@@ -27,7 +27,10 @@ const Random = (props) => {
 
 	return (
 		<div>
-			<h3>Enter in a list of items separated by commas</h3>
+			<h3>
+				Enter in a list of items separated by commas. Then press choose random
+				and see what was selected!
+			</h3>
 			<br />
 			<TextArea onChange={change} value={value} />
 			<br />

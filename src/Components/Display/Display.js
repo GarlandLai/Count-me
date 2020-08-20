@@ -93,25 +93,32 @@ class Display extends Component {
 		if (this.props.countBy === 'Home') return tableOfContent;
 		if (this.props.countBy === 'Dates') {
 			return (
-				<DateRangePicker
-					startDate={this.state.startDate}
-					startDateId="start_date_id"
-					endDate={this.state.endDate}
-					endDateId="end_date_id"
-					onDatesChange={({ startDate, endDate }) =>
-						this.setState({ startDate, endDate })
-					}
-					focusedInput={this.state.focusedInput}
-					onFocusChange={(focusedInput) => this.setState({ focusedInput })}
-					readOnly={true}
-					isOutsideRange={() => false}
-					showClearDates={true}
-				/>
+				<div>
+					<h2>
+						Use this date selection calender to figure out how many days are
+						inbetween dates!
+					</h2>
+					<DateRangePicker
+						startDate={this.state.startDate}
+						startDateId="start_date_id"
+						endDate={this.state.endDate}
+						endDateId="end_date_id"
+						onDatesChange={({ startDate, endDate }) =>
+							this.setState({ startDate, endDate })
+						}
+						focusedInput={this.state.focusedInput}
+						onFocusChange={(focusedInput) => this.setState({ focusedInput })}
+						readOnly={true}
+						isOutsideRange={() => false}
+						showClearDates={true}
+					/>
+				</div>
 			);
 		}
 		if (this.props.countBy === 'Character' || this.props.countBy === 'Words') {
 			return (
 				<div>
+					<h2>Type below and see how many {this.props.countBy} there are!</h2>
 					<TextArea onChange={this.props.change} value={this.props.userInput} />
 					<br />
 					<button type="button" onClick={this.props.clicked}>

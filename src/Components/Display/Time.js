@@ -58,6 +58,7 @@ const Time = (props) => {
 
 	return (
 		<div>
+			<h2>Convert days, hours, and minutes into a selection of your choice!</h2>
 			<Input
 				id="day"
 				type="number"
