@@ -29,7 +29,7 @@ const Navigation = (props) => {
 			<StyledTab id="home" onClick={() => props.onSelect('Home')}>
 				Home
 			</StyledTab>
-			<StyledTab id="characters" onClick={() => props.onSelect('Character')}>
+			<StyledTab id="characters" onClick={() => props.onSelect('Characters')}>
 				Characters
 			</StyledTab>
 			<StyledTab id="words" onClick={() => props.onSelect('Words')}>

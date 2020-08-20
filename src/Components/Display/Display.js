@@ -47,7 +47,7 @@ class Display extends Component {
 	}
 
 	inputCounter = () => {
-		if (this.props.countBy === 'Character') {
+		if (this.props.countBy === 'Characters') {
 			return this.props.userInput.split('').length;
 		}
 		if (this.props.countBy === 'Words') {
@@ -115,7 +115,7 @@ class Display extends Component {
 				</div>
 			);
 		}
-		if (this.props.countBy === 'Character' || this.props.countBy === 'Words') {
+		if (this.props.countBy === 'Characters' || this.props.countBy === 'Words') {
 			return (
 				<div>
 					<h2>Type below and see how many {this.props.countBy} there are!</h2>
