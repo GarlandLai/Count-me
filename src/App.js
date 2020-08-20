@@ -30,6 +30,7 @@ class App extends Component {
 	handlecountSelection = (selection) => {
 		this.setState({
 			countBy: selection,
+			input: '',
 		});
 	};
 
