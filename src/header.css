@@ -1,9 +1,5 @@
-* {
-	margin: 0;
-	padding: 0;
-}
-
 .containerWrapper {
+	margin: 0;
 	width: 100%;
 	height: 200px;
 	display: flex;
@@ -15,7 +11,10 @@
 }
 
 .container {
-	/* width: 100vw; */
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	width: 100vw;
 	height: 200px;
 	overflow: hidden;
 	position: relative;
@@ -32,15 +31,15 @@
 .first-word {
 	position: absolute;
 	transform: translateY(1000px);
-	animation: loadIn 0.5s ease 1s forwards;
+	animation: loadIn 0.75s ease 1.25s forwards;
 }
 
 @keyframes loadIn {
 	0% {
-		transform: translateY(80px);
+		transform: translateY(0px);
 	}
 	100% {
-		transform: translateY(120px);
+		transform: translateY(55px);
 	}
 }
 
@@ -48,5 +47,5 @@
 	position: absolute;
 	right: 156px;
 	transform: translateY(1000px);
-	animation: loadIn 0.5s ease 1.15s forwards;
+	animation: loadIn 1s ease 1.75s forwards;
 }
