@@ -16,11 +16,11 @@ import '../header.css';
 
 const Header = () => {
 	return (
-		<div class="containerWrapper">
-			<div class="container">
+		<div className="containerWrapper">
+			<div className="container">
 				<h1>
-					<span class="first-word">Tool</span>
-					<span class="last-word">Belt</span>
+					<span className="first-word">Random</span>{' '}
+					<span className="last-word">Tools</span>
 				</h1>
 			</div>
 		</div>
