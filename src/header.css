@@ -7,12 +7,9 @@
 	justify-content: center;
 	flex-direction: column;
 	background-color: grey;
-	/* text-align: center; */
 }
 
 .container {
-	/* margin: 0;
-	padding: 0; */
 	text-align: center;
 	width: 100vw;
 	height: 220px;
@@ -29,13 +26,11 @@
 }
 
 .first-word {
-	/* position: absolute; */
 	transform: translateY(1000px);
 	animation: loadIn 0.75s ease 1.25s forwards;
 }
 
 .last-word {
-	/* position: absolute; */
 	right: 0;
 	transform: translateY(1000px);
 	animation: loadIn 1s ease 1.75s forwards;
