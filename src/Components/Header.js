@@ -19,8 +19,8 @@ const Header = () => {
 		<div className="containerWrapper">
 			<div className="container">
 				<h1>
-					<span className="first-word">Random</span>{' '}
-					<span className="last-word">Tools</span>
+					<p className="first-word">Random</p>
+					<p className="last-word">Tools</p>
 				</h1>
 			</div>
 		</div>

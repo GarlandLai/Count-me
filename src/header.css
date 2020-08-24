@@ -7,12 +7,12 @@
 	justify-content: center;
 	flex-direction: column;
 	background-color: grey;
-	text-align: center;
+	/* text-align: center; */
 }
 
 .container {
-	margin: 0;
-	padding: 0;
+	/* margin: 0;
+	padding: 0; */
 	text-align: center;
 	width: 100vw;
 	height: 200px;
@@ -20,7 +20,7 @@
 	position: relative;
 }
 
-.container h1 {
+.container p {
 	color: black;
 	font-size: 70px;
 	font-family: 'Source Sans Pro';
@@ -29,9 +29,16 @@
 }
 
 .first-word {
-	position: absolute;
+	/* position: absolute; */
 	transform: translateY(1000px);
 	animation: loadIn 0.75s ease 1.25s forwards;
+}
+
+.last-word {
+	/* position: absolute; */
+	right: 0;
+	transform: translateY(1000px);
+	animation: loadIn 1s ease 1.75s forwards;
 }
 
 @keyframes loadIn {
@@ -41,11 +48,4 @@
 	100% {
 		transform: translateY(55px);
 	}
-}
-
-.last-word {
-	position: absolute;
-	right: 156px;
-	transform: translateY(1000px);
-	animation: loadIn 1s ease 1.75s forwards;
 }
